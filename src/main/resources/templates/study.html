@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Estudiar</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/study.css}">
+</head>
+<body class="body">
+
+	<header>
+		<img th:src="@{http://localhost:8080/images/EstudiAr.jpg}" alt="EstudiAr" class="logo" onclick="location.href='/'">		
+	</header>
+
+	<article class="article">
+		<h1 th:text="${category.name}" class="h1"></h1>
+
+		<ol class="ol">
+			<li class="li" th:each="item : ${items}">
+				<h2 class="h2" th:text="${item.name}"></h2>
+
+			<button class="btn" id="ocultar" th:attr="onclick=|changeColor('p${item.id}')|">
+				Mostrar
+			</button>
+			<p class="p" th:text="${item.definition}" th:id="'p' + ${item.id}"></p>
+			</li>
+		</ol>
+	
+
+	</article>
+
+	<footer class="footer">
+		<p>Advertencia: es importante que al salir de la página primero acceda al apartado "Cerrar" así esta aplicación puede finalizar y no consumir recursos de la computadora.</p>
+	</footer>
+
+	<script>
+	function changeColor(id)
+		{ 		
+			var element = document.getElementById(id);
+			if(element.style.color=="rgb(255, 255, 255)"){
+				element.style.color ="rgb(30, 33, 36)";
+			}else{
+				element.style.color="rgb(255, 255, 255)";
+			}
+		}
+	</script>
+
+</body>
+</html>

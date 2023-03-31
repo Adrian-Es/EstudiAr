@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Categorías</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/categories.css}">
+</head>
+<body class="body">
+
+	<header class="header">
+		<img th:src="@{http://localhost:8080/images/EstudiAr.jpg}" alt="EstudiAr" class="logo" onclick="location.href='/'">
+		<button onclick="location.href='/categories/add'" class="btn" id="add">Agregar Categoría</button>
+	</header>
+
+	<article class="article">
+
+		<ol class="ol">
+
+		<li th:each="category : ${categories}" class="li">
+			<a th:href="@{/categories/{id}(id=${category.id})}" th:text="${category.name}" class="a"></a>
+
+			<form action="#" th:action="@{/categories/delete/{id}(id=${category.id})}" method="get">
+				<button type="submit" onClick="return confirm('Borrar esta categoria?')" class="btn" id="delete">
+					Eliminar
+				</button>
+			</form>
+		</li>
+
+		</ol>
+
+	</article>
+
+	<footer class="footer">
+		<h4>Advertencia: es importante que al salir de la página primero acceda al apartado "Cerrar" así esta aplicación puede finalizar y no consumir recursos de la computadora.</h4>
+	</footer>
+
+</body>
+</html>

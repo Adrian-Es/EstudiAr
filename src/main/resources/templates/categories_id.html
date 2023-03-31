@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Categoría</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/categoriesId.css}">
+</head>
+<body class="body">
+
+	<header class="header">
+		<img th:src="@{http://localhost:8080/images/EstudiAr.jpg}" alt="EstudiAr" class="logo" onclick="location.href='/'">
+		<a th:href="@{/categories/{id}/add(id=${category.id})}" class="add">
+			<button class="btn" id="add">Agregar término</button>
+		</a>
+	</header>
+
+	<article class="article">
+		<h1 th:text="${category.name}" class="h1"></h1>
+
+		<ol class="ol">
+
+			<li th:each="item : ${items}" class="li">
+				<h2 th:text="${item.name}" class="h2"></h2>
+				<form action="#" th:action="@{/categories/{id}/{itemId}(id=${category.id}, itemId=${item.id})}" method="get" class="form">
+					<button type="submit" onClick="return confirm('Borrar este termino?')" class="btn" id="delete">
+						Eliminar
+					</button>
+				</form>
+				<p th:text="${item.definition}" class="p"></p>
+			</li>
+		</ol>
+	
+		<a th:href="@{/categories/{id}/study(id=${category.id})}">
+			<button class="btn" id="study">Estudiar categoría</button>
+		</a>
+
+	</article>
+
+	<footer class="footer">
+		<p>Advertencia: es importante que al salir de la página primero acceda al apartado "Cerrar" así esta aplicación puede finalizar y no consumir recursos de la computadora.</p>
+	</footer>
+
+</body>
+</html>

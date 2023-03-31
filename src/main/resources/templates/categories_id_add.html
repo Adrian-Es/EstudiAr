@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Nuevo término</title>
+	<link rel="stylesheet" type="text/css" th:href="@{http://localhost:8080/css/categoriesIdAdd.css}">
+</head>
+<body class="body">
+	<header class="header">
+		<img th:src="@{http://localhost:8080/images/EstudiAr.jpg}" alt="EstudiAr" class="logo" onclick="location.href='/'">
+	</header>
+	<article class="article">
+		<h1 class="h1">Nuevo término</h1>
+		<form action="#" th:action="@{/categories/{id}/add(id=${category.id})}" th:object="${item}" method="post" class="form">
+			<label for="termino" class="label">Término: </label>
+			<input type="text" placeholder="Termino" id="name" th:field="${item.name}" class="input" required> <br>
+
+			<label for="definition" class="label">Definición: </label>
+			<input type="text" placeholder="Definicion" id="definition" th:field="${item.definition}" class="input" required> <br>
+
+			<input type="submit" value="Agregar" class="btn">
+		</form>
+	</article>
+	<footer class="footer">
+		<p>Advertencia: es importante que al salir de la página primero acceda al apartado "Cerrar" así esta aplicación puede finalizar y no consumir recursos de la computadora.</p>
+	</footer>
+</body>
+</html>
