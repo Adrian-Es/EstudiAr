@@ -20,4 +20,4 @@ Es de suma importancia saber que las categorias y los términos pueden tener un 
 
 # Descargar EstudiAr
 
-[EstudiAr 1.0](https://drive.google.com/file/d/1toGuspaz6h6RMhZHxB59DYAVXi3SbMzg/view?usp=sharing)
+[EstudiAr 1.0](https://www.mediafire.com/file/vb1b35zcw179f5t/EstudiAr.jar/file)
