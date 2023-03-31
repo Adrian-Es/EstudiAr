@@ -19,3 +19,5 @@ Advertencia: es necesario que en su computadora esté instalado un jdk que sopor
 Es de suma importancia saber que las categorias y los términos pueden tener un nombre de, máximo, 50 caracteres. Mientras que las definiciones no pueden exceder los 500 caracteres.
 
 # Descargar EstudiAr
+
+[EstudiAr 1.0](https://drive.google.com/file/d/1toGuspaz6h6RMhZHxB59DYAVXi3SbMzg/view?usp=sharing)
